@@ -7,32 +7,43 @@ subtitle: Learn more about me!
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
-  <style>
-    .responsive-img-container {
-      width: 100%;
-      height: 800px;
-      overflow: hidden;
-    }
-    .responsive-img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      object-position: top;
-    }
-  </style>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-  <h1>Welcome to My Website</h1>
+  {% include navbar.html %}
 
-  <p>And Go Green!</p>
+  <header>
+    <div class="container">
+      <h1>{{ site.title }}</h1>
+      <p>{{ page.subtitle }}</p>
+    </div>
+  </header>
 
-  <div class="responsive-img-container">
-    <img src="/assets/img/website-img.JPG" alt="My Profile Picture" class="responsive-img">
-  </div>
+  <main class="container">
+    <h1>Welcome to My Website</h1>
 
+    <h2>About Me</h2>
+    <p>I am Sophia Mick, a Finance major with a passion for technology and data analytics. This website showcases my projects, experiences, and interests.</p>
+
+    <h2>Recent Projects</h2>
+    
+    <h3>Project 1: Budget Visualization with Tableau</h3>
+    <p>I created an interactive dashboard in Tableau to visualize and analyze budget data. This project helped stakeholders make informed financial decisions by providing clear insights into spending patterns and budget utilization.</p>
+    
+    <h3>Project 2: Machine Learning Model for Predictive Analytics</h3>
+    <p>Developed a machine learning model to predict future trends based on historical data. This project involved data preprocessing, model training, and evaluation, resulting in a highly accurate predictive tool for business analytics.</p>
+    
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out to me through the <a href="/contact/">contact page</a>.</p>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
